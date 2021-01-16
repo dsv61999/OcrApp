@@ -1,26 +1,14 @@
-from PIL import Image
-import sys
-
-import pyocr
-import pyocr.builders
-
 import input
+import display
+import ocr
 
 # OcrApp = input.ShowCaption("OcrApp")
 # OcrApp.show()
+display.showCaption("OcrApp")
+config = input.InputConfig("aa")
+config.inputImage()
 
-input.showCaption()
-# tools = pyocr.get_available_tools()
-# if len(tools) == 0:
-#     print("No OCR tool found")
-#     sys.exit(1)
+# print(config.imagePath)
 
-# tool = tools[0]
-# print("Will use tool '%s'" % (tool.get_name()))
-
-# txt = tool.image_to_string(
-#     Image.open("./sample_data/wiki.png"),
-#     lang="jpn",
-#     builder=pyocr.builders.TextBuilder(tesseract_layout=6)
-# )
-# print( txt )
+ocrInstance = ocr.Ocr("ocrInstance")
+ocrInstance.ocr(config.imagePath)
