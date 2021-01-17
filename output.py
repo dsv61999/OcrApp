@@ -8,6 +8,7 @@ def get_image_name(imageName="sample.png"):
 
 #  OCR出力を保存する関数
 def saveOutput(save, txt, imageName):
+    imageName = get_image_name(imageName)
     if (save):
         with open("./output/" + imageName + ".txt", "w") as f:  #  outputフォルダに保存する
             print(txt, file=f)
