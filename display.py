@@ -31,6 +31,7 @@ def showAA(word="Hello"):
     print("　　＼　　　　／")
     print("　　　ーーーー)")
 
+#  ＯＣＲのタイプ一覧を表示する関数
 def showHelp():
     print("0・・・方向とスクリプト検出(OSD)のみ")
     print("1・・・OSDによる自動ページセグメンテーション")
@@ -43,3 +44,8 @@ def showHelp():
     print("8・・・画像を1つの単語として扱います")
     print("9・・・画像を円の中の1つの単語として扱います")
     print("10・・・画像を単一の文字として扱います")
+
+#  テキスト(実行結果)を表示する関数
+def showTxt(txt):
+    showCaption_Em("実行結果")
+    print( txt )

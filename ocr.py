@@ -4,8 +4,6 @@ import sys
 import pyocr
 import pyocr.builders
 
-import display
-
 class Ocr:
     def __init__(self, lang, type):
         self.lang = lang
@@ -19,13 +17,11 @@ class Ocr:
             sys.exit(1)
 
         tool = tools[0]
-        # print("{}で読み込みました".format(self.lang))
         # print("Will use tool '%s'" % (tool.get_name()))
         txt = tool.image_to_string(
             Image.open(imagePath),
             lang=langDict[self.lang],
             builder=pyocr.builders.TextBuilder(tesseract_layout=self.type)
         )
-        display.showCaption_Em("実行結果")
 
-        print( txt )
+        return txt
