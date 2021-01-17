@@ -2,13 +2,13 @@ import input
 import display
 import ocr
 
-# OcrApp = input.ShowCaption("OcrApp")
-# OcrApp.show()
 display.showCaption("OcrApp")
-config = input.InputConfig("aa")
+display.showAA("こんにちは")
+type = input.inputType()
+config = input.InputConfig(type)
 config.inputImage()
 
 # print(config.imagePath)
 
-ocrInstance = ocr.Ocr("ocrInstance")
+ocrInstance = ocr.Ocr(type)
 ocrInstance.ocr(config.imagePath)
